@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saman.DemoApp.DealershipSalesReport", "Saman.DemoApp.DealershipSalesReport\Saman.DemoApp.DealershipSalesReport.csproj", "{EC0A2907-4488-4C50-9299-8B5C19586686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saman.DemoApp.WorkerService.QueueListener", "Saman.DemoApp.WorkerService.QueueListener\Saman.DemoApp.WorkerService.QueueListener.csproj", "{14B1759B-9798-4280-8172-8B1D5098913D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC0A2907-4488-4C50-9299-8B5C19586686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC0A2907-4488-4C50-9299-8B5C19586686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC0A2907-4488-4C50-9299-8B5C19586686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC0A2907-4488-4C50-9299-8B5C19586686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14B1759B-9798-4280-8172-8B1D5098913D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B1759B-9798-4280-8172-8B1D5098913D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B1759B-9798-4280-8172-8B1D5098913D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B1759B-9798-4280-8172-8B1D5098913D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58F01C9F-5E67-4823-BEB8-52FDE48171C0}
+	EndGlobalSection
+EndGlobal

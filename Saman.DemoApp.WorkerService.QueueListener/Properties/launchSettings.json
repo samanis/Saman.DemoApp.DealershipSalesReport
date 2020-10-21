@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "Saman.DemoApp.WorkerService.QueueListener": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
