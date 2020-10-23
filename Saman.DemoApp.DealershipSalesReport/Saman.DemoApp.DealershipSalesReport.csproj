@@ -5,6 +5,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Model\Commands\**" />
+    <Content Remove="Model\Commands\**" />
+    <EmbeddedResource Remove="Model\Commands\**" />
+    <None Remove="Model\Commands\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Infrastructure\DataAccess\DealerShipRepository.cs" />
+    <Compile Remove="Infrastructure\DataAccess\IDealerShipRepository.cs" />
+    <Compile Remove="Infrastructure\DataAccess\ISalesRepository.cs" />
+    <Compile Remove="Infrastructure\DataAccess\SalesReportCommandRepository.cs" />
+    <Compile Remove="Infrastructure\INewUploadedFileEventHandler.cs" />
+    <Compile Remove="Infrastructure\NewFileUploadedEvent.cs" />
+    <Compile Remove="Infrastructure\RabbitMQEventHandler.cs" />
+    <Compile Remove="Migrations\20201022155231_Dealership-Id-is-its-name.cs" />
+    <Compile Remove="Migrations\20201022155231_Dealership-Id-is-its-name.Designer.cs" />
+    <Compile Remove="Migrations\20201022160000_Dealership-Id-is-its-name-2.cs" />
+    <Compile Remove="Migrations\20201022160000_Dealership-Id-is-its-name-2.Designer.cs" />
+    <Compile Remove="Migrations\20201022160748_Dealership-Id-is-its-name.cs" />
+    <Compile Remove="Migrations\20201022160748_Dealership-Id-is-its-name.Designer.cs" />
+    <Compile Remove="Model\Dealership.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
       <PrivateAssets>all</PrivateAssets>

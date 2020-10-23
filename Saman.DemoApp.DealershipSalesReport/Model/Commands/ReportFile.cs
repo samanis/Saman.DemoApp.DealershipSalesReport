@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Saman.DemoApp.DealershipSalesReport.Infrastructure.ViewModels
+namespace Saman.DemoApp.DealershipSalesReport.Model.Commands
 {
-    public class CustomerFileVM
+    public class ReportFile : Entity<int>
     {
-        public string CustomerName { get; set; }
-
         public string FileName { get; set; }
     }
 }

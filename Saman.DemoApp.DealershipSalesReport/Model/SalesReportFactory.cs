@@ -8,15 +8,31 @@ namespace Saman.DemoApp.DealershipSalesReport.Model
 {
     public class SalesReportFactory
     {
-        public SalesReport BuildSalesReport(string input, string fileName)
+        private SalesReport CreateSalesReport(string input, string fileName)
         {
-            
+            string[] reportArray = CreateSalesDataArray(input);
+            SalesReport salesReport = new SalesReport();
+            salesReport.DealNumber = int.Parse(reportArray[0]);
+            salesReport.CustomerName = reportArray[1];
+            salesReport.DealershipName = reportArray[2];
+            salesReport.Vehicle = reportArray[3];
+            salesReport.Price = decimal.Parse($"{reportArray[4].Replace("\"", "")}");
+            salesReport.Date = DateTime.Parse(reportArray[5]);
+            if (string.IsNullOrEmpty(fileName.Trim()))
+                throw new Exception("Can't build the record, File name is empty");
+            salesReport.FileName = fileName;
+            return salesReport;
+        }
+
+
+        private static string[] CreateSalesDataArray(string input)
+        {
             var values = input.Split(',');
             List<string> strings = new List<string>();
             StringBuilder stringBuilder = new StringBuilder();
-            for(int idx = 0; idx<values.Length; idx++)
+            for (int idx = 0; idx < values.Length; idx++)
             {
-                if(values[idx].StartsWith("\""))
+                if (values[idx].StartsWith("\""))
                 {
                     stringBuilder.Append(values[idx]);
                     idx++;
@@ -32,29 +48,21 @@ namespace Saman.DemoApp.DealershipSalesReport.Model
                 strings.Add(values[idx]);
             }
             var finalArray = strings.ToArray();
-            SalesReport salesReport = new SalesReport();
-            salesReport.DealNumber = int.Parse(finalArray[0]);
-            salesReport.CustomerName = finalArray[1];
-            salesReport.DealershipName = finalArray[2];
-            salesReport.Vehicle = finalArray[3];
-            salesReport.Price = decimal.Parse($"{finalArray[4].Replace("\"","")}");
-            salesReport.Date = DateTime.Parse(finalArray[5]);
-            if (string.IsNullOrEmpty(fileName.Trim()))
-                throw new Exception("Can't build the record, File name is empty");
-            salesReport.FileName = fileName;
-            return salesReport;
+            return finalArray;
         }
 
-        public IEnumerable<SalesReport> BuildSalesReports(CSVSalesFile cSVSalesFile)
+        public IEnumerable<SalesReport> CreateSalesReports(string[] salesFileLines, string fileName)
         {
             var salesReports = new List<SalesReport>();
-            for(int index =1;index < cSVSalesFile.FileLines.Length; index++)
+            for(int index =1;index < salesFileLines.Length; index++)
             {
-                var salesReport = BuildSalesReport(cSVSalesFile.FileLines[index],cSVSalesFile.FileName);
+                var salesReport = CreateSalesReport(salesFileLines[index], fileName);
                 salesReports.Add(salesReport);
             }
 
             return salesReports;
         }
+
+        
     }
 }
